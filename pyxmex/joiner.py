@@ -1,6 +1,6 @@
 class Joiner():
-    @classmethod
-    def left_outer_join_sections(self, left_collection, right_collection, join_condition):
+    @staticmethod
+    def left_outer_join_sections(left_collection, right_collection, join_condition):
         merged_sections = []
 
         for left_instance in left_collection:
