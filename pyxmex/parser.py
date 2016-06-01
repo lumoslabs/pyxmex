@@ -1,6 +1,7 @@
 from yaml import load, dump
 import os
 
+
 class Parser():
     def __init__(self, config_file=os.path.join(os.path.dirname(os.path.realpath(__file__)), 'config/eptrn.yml')):
         self.eptrn_config = load(open(config_file))['DETAIL_RECORD']
@@ -30,16 +31,13 @@ class Parser():
         for left_instance in left_collection:
             right_matching = [right_instance for right_instance in right_collection if join_condition(left_instance, right_instance)]
 
-            if not len(right_matching):
-                merged_sections.append(left_instance.copy())
-                continue
+            merge_instance = left_instance.copy()
 
-            relevant_right = right_matching[0]
+            if len(right_matching):
+                relevant_right = right_matching[0]
+                merge_instance.update(relevant_right)
 
-            merge_section_one = left_instance.copy()
-            merge_section_one.update(relevant_right)
-
-            merged_sections.append(merge_section_one)
+            merged_sections.append(merge_instance)
 
         return merged_sections
 
