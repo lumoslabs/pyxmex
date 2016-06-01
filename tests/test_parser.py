@@ -16,11 +16,13 @@ class TestParser(unittest.TestCase):
     def test_left_outer_join_sections_joins_sections_on_requested_fields(self):
         parsed = self.parser.parse_detail_record_from_file(self.dummy_file_path)
 
+        def join_condition(left_instance, right_instance):
+            return left_instance['TLRR_PAYMENT_NUMBER'] == right_instance['PAYMENT_NUMBER']
+
         joined = self.parser.left_outer_join_sections(
             left_collection=parsed['RECORD_OF_CHARGE_DETAIL_RECORD'],
             right_collection=parsed['SUMMARY_RECORD'],
-            left_on='TLRR_PAYMENT_NUMBER',
-            right_on='PAYMENT_NUMBER'
+            join_condition=join_condition
         )
 
         self.assertEqual(joined[0]['PAYMENT_DATE'], '2013068')

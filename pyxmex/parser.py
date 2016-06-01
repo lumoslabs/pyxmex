@@ -24,11 +24,11 @@ class Parser():
 
         return fields
 
-    def left_outer_join_sections(self, left_collection, right_collection, left_on, right_on):
+    def left_outer_join_sections(self, left_collection, right_collection, join_condition):
         merged_sections = []
 
         for left_instance in left_collection:
-            right_matching = [right_instance for right_instance in right_collection if right_instance[right_on] == left_instance[left_on]]
+            right_matching = [right_instance for right_instance in right_collection if join_condition(left_instance, right_instance)]
 
             if not len(right_matching):
                 merged_sections.append(left_instance.copy())
