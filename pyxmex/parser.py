@@ -25,7 +25,7 @@ class Parser():
 
         return fields
 
-    def parse_detail_record_from_file(self, file_name):
+    def process(self, file_name):
         result = {}
 
         for section_type in self.section_types:

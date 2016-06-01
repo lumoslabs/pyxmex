@@ -8,7 +8,7 @@ class TestJoiner(unittest.TestCase):
         self.dummy_file_path = os.path.join(os.path.dirname(os.path.realpath(__file__)), 'support/dummy_eptrn_raw')
 
     def test_left_outer_join_sections_joins_sections_on_requested_fields(self):
-        parsed = self.parser.parse_detail_record_from_file(self.dummy_file_path)
+        parsed = self.parser.process(self.dummy_file_path)
 
         def join_condition(left_instance, right_instance):
             return left_instance['TLRR_PAYMENT_NUMBER'] == right_instance['PAYMENT_NUMBER']
