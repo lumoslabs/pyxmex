@@ -1,5 +1,5 @@
 # Pyxmex
-Parse American Express EPTRN files in python
+Parse American Express EPTRN files in Python
 
 ## Installation
 `$ pip install pyxmex`
