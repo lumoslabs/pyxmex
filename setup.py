@@ -1,6 +1,6 @@
 from setuptools import setup, find_packages
 
-version = '0.0.3'
+version = '0.0.4'
 
 def do_setup():
     setup(
@@ -16,7 +16,7 @@ def do_setup():
         author='Rob Froetscher',
         author_email='rfroetscher@lumoslabs.com',
         url='https://github.com/lumoslabs/pyxmex',
-        download_url='https://github.com/lumoslabs/pyxmex/tarball/0.0.1'
+        download_url='https://github.com/lumoslabs/pyxmex/tarball/0.0.4'
     )
 
 if __name__ == "__main__":
