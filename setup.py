@@ -1,6 +1,6 @@
 from setuptools import setup, find_packages
 
-version = '0.0.5'
+version = '0.0.6'
 
 def do_setup():
     setup(
@@ -10,13 +10,13 @@ def do_setup():
         version=version,
         packages=find_packages(),
         zip_safe=False,
-        install_requires=['PyYAML'],
+        install_requires=['pyyaml'],
         package_data={'': ['pyxmex/config/eptrn.yml']},
         include_package_data=True,
         author='Rob Froetscher',
         author_email='rfroetscher@lumoslabs.com',
         url='https://github.com/lumoslabs/pyxmex',
-        download_url='https://github.com/lumoslabs/pyxmex/tarball/0.0.4'
+        download_url=('https://github.com/lumoslabs/pyxmex/tarball/' + version)
     )
 
 if __name__ == "__main__":
