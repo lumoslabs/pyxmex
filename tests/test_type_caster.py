@@ -22,7 +22,7 @@ class TestTypeCaster(unittest.TestCase):
     def test_parse_parses_numeric_correctly(self):
         self.assertEqual(TypeCaster.parse('numeric', '10'), 10)
 
-    def test_parse_parses_numeric_correctly(self):
+    def test_parse_parses_string_correctly(self):
         self.assertEqual(TypeCaster.parse('string', '10'), '10')
 
     def test_not_real_type_raises_a_helpful_error(self):
