@@ -1,5 +1,6 @@
 import os
 import unittest
+import datetime
 from pyxmex import Parser, Joiner
 
 class TestJoiner(unittest.TestCase):
@@ -19,8 +20,8 @@ class TestJoiner(unittest.TestCase):
             join_condition=join_condition
         )
 
-        self.assertEqual(joined[0]['PAYMENT_DATE'], '2013068')
-        self.assertEqual(joined[0]['AMEX_PAYEE_NUMBER'], '3491124567')
+        self.assertEqual(joined[0]['PAYMENT_DATE'], datetime.datetime(2013, 3, 9))
+        self.assertEqual(joined[0]['AMEX_PAYEE_NUMBER'], 3491124567)
         self.assertEqual(joined[0]['PAYMENT_NUMBER'], joined[0]['TLRR_PAYMENT_NUMBER'])
 
 if __name__ == '__main__':

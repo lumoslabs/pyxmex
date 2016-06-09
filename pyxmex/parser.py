@@ -1,5 +1,7 @@
 from yaml import load, dump
 import os
+import utils
+from pyxmex.type_caster import TypeCaster
 
 
 class Parser():
@@ -21,7 +23,13 @@ class Parser():
         field_formats = self.eptrn_config['TYPES'][section_type]['FIELDS']
 
         for field_format in field_formats:
-            fields[field_format['NAME']] = self._range_from_list(line, *field_format['RANGE'])
+            raw_value = utils.range_from_list(line, *field_format['RANGE'])
+            typed_value = None
+
+            if field_format.get('TYPE'):
+                typed_value = TypeCaster.parse(field_format['TYPE'], raw_value)
+
+            fields[field_format['NAME']] = typed_value or raw_value
 
         return fields
 
@@ -40,7 +48,7 @@ class Parser():
 
             for line in content:
                 # find out what type of information this line contains
-                section_type_mapping_key = self._range_from_list(line, *self.eptrn_config['TYPE_FIELD'])
+                section_type_mapping_key = utils.range_from_list(line, *self.eptrn_config['TYPE_FIELD'])
                 section_type_name = self.eptrn_config['TYPE_MAPPING'][section_type_mapping_key]
 
                 # parse this line according to what type it is
