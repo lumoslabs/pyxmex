@@ -2,7 +2,6 @@ import os
 import unittest
 import datetime
 from pyxmex import TypeCaster
-from IPython import embed
 
 class TestTypeCaster(unittest.TestCase):
     def test_parse_parses_decimals_correctly(self):
