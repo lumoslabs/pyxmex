@@ -1,6 +1,6 @@
 from setuptools import setup, find_packages
 
-version = '0.0.8'
+version = '0.1.0'
 
 def do_setup():
     setup(

@@ -9,15 +9,6 @@ class Parser():
         self.eptrn_config = load(open(config_file))['DETAIL_RECORD']
         self.section_types = [v for k, v in self.eptrn_config['TYPE_MAPPING'].iteritems()]
 
-    def _range_from_list(self, list_obj, range_start, range_end):
-        result_string = ''
-
-        for idx, val in enumerate(list_obj):
-            if idx >= range_start and idx <= range_end:
-                result_string += val
-
-        return result_string
-
     def _parse_line(self, section_type, line):
         fields = {}
         field_formats = self.eptrn_config['TYPES'][section_type]['FIELDS']
