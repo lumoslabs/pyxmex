@@ -154,7 +154,6 @@ DETAIL_RECORD:
           TYPE: decimal
         - NAME: TLRR_CM_NUMBER
           RANGE: [91, 105]
-          TYPE: numeric
         - NAME: TLRR_CM_REF_NO
           RANGE: [106, 116]
         - NAME: TLRR_SE_REF
@@ -278,7 +277,6 @@ DETAIL_RECORD:
           TYPE: numeric
         - NAME: CARDMEMBER_NUMBER
           RANGE: [125, 141]
-          TYPE: numeric
         - NAME: ADJUSTMENT_REASON
           RANGE: [142, 421]
     OTHER_FEES_AND_REVENUES_DETAIL_RECORDS:
