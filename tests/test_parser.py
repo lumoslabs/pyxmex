@@ -1,5 +1,6 @@
 import os
 import unittest
+import datetime
 from pyxmex import Parser
 
 class TestParser(unittest.TestCase):
@@ -12,6 +13,12 @@ class TestParser(unittest.TestCase):
 
         self.assertEqual(parsed['RECORD_OF_CHARGE_DETAIL_RECORD'][0]['TLRR_PAYMENT_NUMBER'], 'DUMT1234')
         self.assertEqual(parsed['RECORD_OF_CHARGE_DETAIL_RECORD'][0]['TLRR_CM_REF_NO'], '12345LMNA11')
+
+    def test_process_has_types_casted_when_they_are_configured(self):
+        parsed = self.parser.process(self.dummy_file_path)
+
+        self.assertEqual(parsed['RECORD_OF_CHARGE_DETAIL_RECORD'][0]['TLRR_SOC_AMOUNT'], 373.05)
+        self.assertEqual(parsed['RECORD_OF_CHARGE_DETAIL_RECORD'][0]['TLRR_TRAN_DATE'], datetime.datetime(2013, 3, 6))
 
 if __name__ == '__main__':
     unittest.main()
