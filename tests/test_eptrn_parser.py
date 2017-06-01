@@ -1,11 +1,13 @@
 import os
 import unittest
 import datetime
-from pyxmex import Parser
+from pyxmex import EPTRNParser
 
-class TestParser(unittest.TestCase):
+from pyxmex.type_caster import TypeCaster
+
+class TestEPTRNParser(unittest.TestCase):
     def setUp(self, session=None):
-        self.parser = Parser()
+        self.parser = EPTRNParser()
         self.dummy_file_path = os.path.join(os.path.dirname(os.path.realpath(__file__)), 'support/dummy_eptrn_raw')
 
     def test_process_parses_a_sample_file(self):
@@ -19,6 +21,7 @@ class TestParser(unittest.TestCase):
 
         self.assertEqual(parsed['RECORD_OF_CHARGE_DETAIL_RECORD'][0]['TLRR_SOC_AMOUNT'], 373.05)
         self.assertEqual(parsed['RECORD_OF_CHARGE_DETAIL_RECORD'][0]['TLRR_TRAN_DATE'], datetime.datetime(2013, 3, 6))
+        self.assertEqual(parsed['SUMMARY_RECORD'][0]['DEBIT_BALANCE_AMOUNT'], 0.0)
 
 if __name__ == '__main__':
     unittest.main()
