@@ -38,20 +38,24 @@ class TypeCaster():
           'julian': self._parse_raw_julian,
           'date': lambda raw_value: datetime.datetime.strptime(raw_value, '%Y-%m-%d'),
           'numeric': lambda raw_value: int(raw_value),
+          'float': lambda raw_value: float(raw_value),
           'decimal': self._parse_raw_decimal
         }
 
     @classmethod
     def parse(self, type_name, raw_value):
+        if raw_value == '':
+            return None
+
         handler_function = self.type_handling().get(type_name)
 
         if handler_function:
             return handler_function(raw_value)
 
-        datetime_match = re.search(self.DATE_PATTERN, raw_value) or re.search(self.TIME_PATTERN, raw_value)
+        datetime_match = re.search(self.DATE_PATTERN, type_name) or re.search(self.TIME_PATTERN, type_name)
 
         if datetime_match:
-            return datetime.datetime.strptime(datetime_match.group(1), '%Y-%m-%d')
+            return datetime.datetime.strptime(raw_value, datetime_match.group(1))
 
         raise ValueError("Could not parse {0} with type {1}".format(raw_value, type_name))
 

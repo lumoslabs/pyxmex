@@ -1,11 +1,11 @@
 import os
 import unittest
 import datetime
-from pyxmex import Parser, Joiner
+from pyxmex import EPTRNParser, Joiner
 
 class TestJoiner(unittest.TestCase):
     def setUp(self, session=None):
-        self.parser = Parser()
+        self.parser = EPTRNParser()
         self.dummy_file_path = os.path.join(os.path.dirname(os.path.realpath(__file__)), 'support/dummy_eptrn_raw')
 
     def test_left_outer_join_sections_joins_sections_on_requested_fields(self):

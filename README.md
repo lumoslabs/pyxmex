@@ -1,19 +1,29 @@
 # Pyxmex
-Parse American Express EPTRN files in Python
+Parse American Express EPTRN (transaction) and CBNOT (chargeback) files in Python
 
 ## Installation
 `$ pip install pyxmex`
 
 ## Usage
-The parser can be instantiated with no args to use the default EPTRN config, or you can pass a path to a config file.
+The EPTRN or CBNOT parser can be instantiated with no args to use the default EPTRN config, or you can pass a path to a config file.
 The #process method is called with the location of the raw file you want parsed.
 ```python
-from pyxmex import Parser
-parser = Parser()
+from pyxmex import EPTRNParser
+parser = EPTRNParser()
 
 parsed = parser.process('MYCOMPANY.EPTRN')
 
 parsed['RECORD_OF_CHARGE_DETAIL_RECORD'][0]['TLRR_PAYMENT_NUMBER']
+# => 'DUMT1234'
+```
+
+```python
+from pyxmex import CBNOTParser
+parser = CBNOTParser()
+
+parsed = parser.process('MYCOMPANY.CBNOT')
+
+parsed[0]['CB_REFERENCE_CODE']
 # => 'DUMT1234'
 ```
 
