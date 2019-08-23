@@ -1,14 +1,14 @@
 from yaml import load, dump
 import os
-import utils
-from parser import Parser
+from . import utils
+from .parser import Parser
 
 class EPTRNParser(Parser):
     def __init__(self, config_file=os.path.join(os.path.dirname(os.path.realpath(__file__)), 'config/eptrn.yml')):
         super(self.__class__, self).__init__()
 
         self.eptrn_config = load(open(config_file))['DETAIL_RECORD']
-        self.section_types = [v for k, v in self.eptrn_config['TYPE_MAPPING'].iteritems()]
+        self.section_types = [v for k, v in self.eptrn_config['TYPE_MAPPING'].items()]
 
     def process(self, file_name):
         result = {}

@@ -13,7 +13,7 @@ class TestCBNOTParser(unittest.TestCase):
 
         self.assertEqual(parsed[0]['SE_NUMB'], '1234398429')
         self.assertEqual(parsed[0]['CB_REFERENCE_CODE'], '17512345')
-        self.assertEqual(parsed[0]['DATE_OF_CHARGE'], datetime.datetime(2017, 01, 11))
+        self.assertEqual(parsed[0]['DATE_OF_CHARGE'], datetime.datetime(2017, 1, 11))
         self.assertEqual(parsed[0]['CB_AMOUNT'], -89.95)
 
         self.assertEqual(parsed[1]['CB_AMOUNT'], -33.10)

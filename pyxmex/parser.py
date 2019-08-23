@@ -1,4 +1,4 @@
-import utils
+from . import utils
 from pyxmex.type_caster import TypeCaster
 
 
