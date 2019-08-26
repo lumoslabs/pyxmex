@@ -1,6 +1,6 @@
 import re
 import datetime
-import utils
+from . import utils
 
 
 class TypeCaster():

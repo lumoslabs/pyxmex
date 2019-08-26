@@ -1,7 +1,7 @@
 from yaml import load, dump
 import os
-import utils
-from parser import Parser
+from . import utils
+from .parser import Parser
 
 class CBNOTParser(Parser):
     def __init__(self, config_file=os.path.join(os.path.dirname(os.path.realpath(__file__)), 'config/cbnot.yml')):
