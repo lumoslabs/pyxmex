@@ -10,7 +10,7 @@ def do_setup():
         version=version,
         packages=find_packages(),
         zip_safe=False,
-        install_requires=['pyyaml'],
+        install_requires=['pyyaml', 'six==1.12.0'],
         package_data={'': ['pyxmex/config/*.yml']},
         include_package_data=True,
         author='Rob Froetscher, Joyce Lau',

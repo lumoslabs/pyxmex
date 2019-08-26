@@ -64,4 +64,4 @@ target/
 # IntelliJ / Pycharm
 .idea/
 *.iml
-venv
+venv*
