@@ -1,4 +1,4 @@
-from yaml import load, dump
+from yaml import load, FullLoader
 import os
 from . import utils
 from .parser import Parser
@@ -7,7 +7,10 @@ class CBNOTParser(Parser):
     def __init__(self, config_file=os.path.join(os.path.dirname(os.path.realpath(__file__)), 'config/cbnot.yml')):
         super(self.__class__, self).__init__()
 
-        self.field_formats = load(open(config_file))['CHARGEBACK_DETAIL_RECORD']['FIELDS']
+        with open(config_file) as file:
+            config = load(file, Loader=FullLoader)
+
+        self.field_formats = config['CHARGEBACK_DETAIL_RECORD']['FIELDS']
 
     def process(self, file_name):
         with open(file_name) as f:

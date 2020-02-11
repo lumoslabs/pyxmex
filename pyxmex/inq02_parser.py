@@ -1,4 +1,4 @@
-from yaml import load, dump
+from yaml import load, FullLoader
 from six import iteritems
 import os
 from . import utils
@@ -8,7 +8,8 @@ class INQ02Parser(Parser):
     def __init__(self, config_file=os.path.join(os.path.dirname(os.path.realpath(__file__)), 'config/inq02.yml')):
         super(self.__class__, self).__init__()
 
-        config = load(open(config_file))
+        with open(config_file) as file:
+            config = load(file, Loader=FullLoader)
 
         self.inq02_generic_config = config['INQUIRY_DETAIL_RECORD_GENERIC']
         self.inq02_case_config = config['INQUIRY_DETAIL_RECORD_CASE_TYPE_SPECIFIC']
