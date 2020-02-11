@@ -1,0 +1,547 @@
+DATA_FILE_HEADER_RECORD:
+  FIELDS:
+    - NAME: REC_TYPE
+      RANGE: [0, 0]
+    - NAME: AMEX_APPL_AREA
+      RANGE: [1, 100]
+    - NAME: SAID
+      RANGE: [101, 106]
+    - NAME: DATATYPE
+      RANGE: [107, 111]
+    - NAME: STARS_CREATION_DATE
+      RANGE: [112, 118]
+    - NAME: FILE_CREATION_TIME
+      RANGE: [119, 125]
+    - NAME: STARS_FILE_SEQUENCE_NUMBER
+      RANGE: [126, 128]
+INQUIRY_DETAIL_RECORD_GENERIC:
+  RECURRING: true
+  FIELDS:
+    - NAME: DTL_REC_TYPE
+      RANGE: [0, 0]
+    - NAME: REC_TYPE
+      RANGE: [1, 5]
+    - NAME: CARDMEMBER_ACCOUNT_NUMBER
+      RANGE: [6, 20]
+    - NAME: INQUIRY_CASE_NUMBER
+      RANGE: [21, 27]
+    - NAME: AIRLINE_TICKET_NUMBER
+      RANGE: [28, 40]
+    - NAME: AMEX_PROCESS_DATE
+      RANGE: [47, 52]
+    - NAME: AMEX_ID
+      RANGE: [53, 59]
+    - NAME: CASE_TYPE
+      RANGE: [60, 64]
+    - NAME: SE_REPLY_BY_DATE
+      RANGE: [65, 70]
+      TYPE: date(%Y%m%d)
+    - NAME: LOCATION_NUMBER
+      RANGE: [71, 76]
+    - NAME: DATE_OF_CHARGE
+      RANGE: [77, 82]
+    - NAME: CARDMEMBER_NAME_1
+      RANGE: [83, 112]
+    - NAME: CARDMEMBER_NAME_2
+      RANGE: [113, 142]
+    - NAME: CARDMEMBER_ACCOUNT_NUMBER_EXD
+      RANGE: [173, 191]
+    - NAME: CARDMEMBER_CITY_STATE
+      RANGE: [203, 232]
+    - NAME: CARDMEMBER_ZIP
+      RANGE: [233, 241]
+    - NAME: SE_NUMBER
+      RANGE: [242, 251]
+    - NAME: INQUIRY_REASON_CODE
+      RANGE: [252, 254]
+    - NAME: FOLLOW-UP_REASON_CODE
+      RANGE: [255, 256]
+    - NAME: FOREIGN_AMOUNT
+      RANGE: [257, 271]
+      TYPE: float
+    - NAME: SUPPORT_TO_FOLLOW
+      RANGE: [275, 275]
+    - NAME: INQUIRY_ACTION_NUMBER
+      RANGE: [276, 277]
+    - NAME: CARDMEMBER_FIRST_NAME_1
+      RANGE: [278, 289]
+    - NAME: CARDMEMBER_MIDDLE_NAME_1
+      RANGE: [290, 301]
+    - NAME: CARDMEMBER_LAST_NAME_1
+      RANGE: [302, 321]
+    - NAME: CARDMEMBER_NUMBER
+      RANGE: [321, 336]
+    - NAME: CARDMEMBER_ORIGINAL_NAME
+      RANGE: [337, 366]
+    - NAME: INQUIRY_NOTE_1
+      RANGE: [367, 432]
+    - NAME: INQUIRY_NOTE_2
+      RANGE: [433, 510]
+    - NAME: INQUIRY_NOTE_3
+      RANGE: [511, 570]
+    - NAME: CARDMEMBER_ORIG_FIRST_NAME
+      RANGE: [571, 582]
+    - NAME: CARDMEMBER_ORIG_MIDDLE_NAME
+      RANGE: [583, 594]
+    - NAME: CARDMEMBER_ORIG_LAST_NAME
+      RANGE: [595, 614]
+    - NAME: INQUIRY_NOTE_4
+      RANGE: [615, 674]
+    - NAME: INQUIRY_NOTE_5
+      RANGE: [675, 734]
+    - NAME: INQUIRY_NOTE_6
+      RANGE: [735, 794]
+    - NAME: INQUIRY_NOTE_7
+      RANGE: [795, 854]
+INQUIRY_DETAIL_RECORD_CASE_TYPE_SPECIFIC:
+  ABSTRACT: true
+  RECURRING: true
+  TYPE_FIELD: [60, 64]
+  TYPES:
+    AIRDS:
+      RECURRING: true
+      FIELDS:
+        - NAME: CHARGE_AMOUNT
+          RANGE: [855, 863]
+          TYPE: float
+        - NAME: DISPUTED_AMOUNT
+          RANGE: [864, 872]
+          TYPE: float
+        - NAME: REFERENCE_NUMBER
+          RANGE: [873, 884]
+        - NAME: SOC_INVOICE_NUMBER
+          RANGE: [885, 890]
+        - NAME: SEQUENCE_INDICATOR
+          RANGE: [891, 892]
+        - NAME: PASSENGER_NAME
+          RANGE: [893, 912]
+        - NAME: PASSENGER_FIRST_NAME
+          RANGE: [913, 924]
+        - NAME: PASSENGER_MIDDLE_NAME
+          RANGE: [925, 936]
+        - NAME: PASSENGER_LAST_NAME
+          RANGE: [937, 957]
+        - NAME: SE_PROCESS_DATE
+          RANGE: [957, 959]
+          TYPE: date(%Y%m%d)
+        - NAME: IND_FORM_CODE
+          RANGE: [1022, 1023]
+        - NAME: IND_REF_NUMBER
+          RANGE: [1024, 1053]
+        - NAME: LOC_REF_NUMBER
+          RANGE: [1057, 1071]
+        - NAME: TRIUMPH_SEQUENCE_NUMBER
+          RANGE: [1074, 1075]
+        - NAME: INQUIRY_MARK
+          RANGE: [1076, 1076]
+    AIRLT:
+      RECURRING: true
+      FIELDS:
+        - NAME: CHARGE_AMOUNT
+          RANGE: [855, 863]
+          TYPE: float
+        - NAME: DISPUTED_AMOUNT
+          RANGE: [864, 872]
+          TYPE: float
+        - NAME: REFERENCE_NUMBER
+          RANGE: [873, 884]
+        - NAME: SOC_INVOICE_NUMBER
+          RANGE: [885, 890]
+        - NAME: SEQUENCE_INDICATOR
+          RANGE: [891, 892]
+        - NAME: PASSENGER_NAME
+          RANGE: [893, 912]
+        - NAME: PASSENGER_FIRST_NAME
+          RANGE: [913, 924]
+        - NAME: PASSENGER_MIDDLE_NAME
+          RANGE: [925, 936]
+        - NAME: PASSENGER_LAST_NAME
+          RANGE: [937, 957]
+        - NAME: SE_PROCESS_DATE
+          RANGE: [957, 959]
+          TYPE: date(%Y%m%d)
+        - NAME: LTA_FIELD_DATE
+          RANGE: [960, 965]
+        - NAME: IND_FORM_CODE
+          RANGE: [1022, 1023]
+        - NAME: IND_REF_NUMBER
+          RANGE: [1024, 1053]
+        - NAME: LOC_REF_NUMBER
+          RANGE: [1057, 1071]
+        - NAME: TRIUMPH_SEQUENCE_NUMBER
+          RANGE: [1074, 1075]
+        - NAME: INQUIRY_MARK
+          RANGE: [1076, 1076]
+    AIRRT:
+      RECURRING: true
+      FIELDS:
+        - NAME: CHARGE_AMOUNT
+          RANGE: [855, 863]
+          TYPE: float
+        - NAME: DISPUTED_AMOUNT
+          RANGE: [864, 872]
+          TYPE: float
+        - NAME: REFERENCE_NUMBER
+          RANGE: [873, 884]
+        - NAME: SOC_INVOICE_NUMBER
+          RANGE: [885, 890]
+        - NAME: SEQUENCE_INDICATOR
+          RANGE: [891, 892]
+        - NAME: PASSENGER_NAME
+          RANGE: [893, 912]
+        - NAME: PASSENGER_FIRST_NAME
+          RANGE: [913, 924]
+        - NAME: PASSENGER_MIDDLE_NAME
+          RANGE: [925, 936]
+        - NAME: PASSENGER_LAST_NAME
+          RANGE: [937, 957]
+        - NAME: SE_PROCESS_DATE
+          RANGE: [957, 959]
+          TYPE: date(%Y%m%d)
+        - NAME: RETURN_DATE
+          RANGE: [960, 965]
+          TYPE: date(%Y%m%d)
+        - NAME: CREDIT_RECEIPT_NUMBER
+          RANGE: [966, 980]
+        - NAME: RETURN_TO_NAME
+          RANGE: [981, 1004]
+        - NAME: RETURN_TO_STREET
+          RANGE: [1005, 1021]
+        - NAME: IND_FORM_CODE
+          RANGE: [1022, 1023]
+        - NAME: IND_REF_NUMBER
+          RANGE: [1024, 1053]
+        - NAME: LOC_REF_NUMBER
+          RANGE: [1057, 1071]
+        - NAME: TRIUMPH_SEQUENCE_NUMBER
+          RANGE: [1074, 1075]
+        - NAME: INQUIRY_MARK
+          RANGE: [1076, 1076]
+    AIRTB:
+      RECURRING: true
+      FIELDS:
+        - NAME: CHARGE_AMOUNT
+          RANGE: [855, 863]
+          TYPE: float
+        - NAME: DISPUTED_AMOUNT
+          RANGE: [864, 872]
+          TYPE: float
+        - NAME: REFERENCE_NUMBER
+          RANGE: [873, 884]
+        - NAME: SOC_INVOICE_NUMBER
+          RANGE: [885, 890]
+        - NAME: SEQUENCE_INDICATOR
+          RANGE: [891, 892]
+        - NAME: PASSENGER_NAME
+          RANGE: [893, 912]
+        - NAME: PASSENGER_FIRST_NAME
+          RANGE: [913, 924]
+        - NAME: PASSENGER_MIDDLE_NAME
+          RANGE: [925, 936]
+        - NAME: PASSENGER_LAST_NAME
+          RANGE: [937, 957]
+        - NAME: IND_FORM_CODE
+          RANGE: [1022, 1023]
+        - NAME: IND_REF_NUMBER
+          RANGE: [1024, 1053]
+        - NAME: LOC_REF_NUMBER
+          RANGE: [1057, 1071]
+        - NAME: TRIUMPH_SEQUENCE_NUMBER
+          RANGE: [1074, 1075]
+        - NAME: INQUIRY_MARK
+          RANGE: [1076, 1076]
+    AREXS:
+      RECURRING: true
+      FIELDS:
+        - NAME: CHARGE_AMOUNT
+          RANGE: [855, 863]
+          TYPE: float
+        - NAME: DISPUTED_AMOUNT
+          RANGE: [864, 872]
+          TYPE: float
+        - NAME: REFERENCE_NUMBER
+          RANGE: [873, 884]
+        - NAME: CARD_DEPOSIT
+          RANGE: [885, 885]
+        - NAME: CARD_CANC_NUMBER
+          RANGE: [886, 905]
+        - NAME: ASSURED_RESERVATION
+          RANGE: [906, 906]
+        - NAME: RES_CANCELLED
+          RANGE: [907, 907]
+        - NAME: RES_CANCELLED_DATE
+          RANGE: [908, 913]
+          TYPE: date(%Y%m%d)
+        - NAME: RES_CANCELLED_TIME
+          RANGE: [914, 921]
+        - NAME: CANCEL_ZONE
+          RANGE: [922, 922]
+        - NAME: RESERVATION_MADE_FOR
+          RANGE: [923, 928]
+        - NAME: RESERVATION_LOCATION
+          RANGE: [929, 948]
+        - NAME: RESERVATION_MADE_ON
+          RANGE: [949, 954]
+        - NAME: FOLIO_REF_NUMBER
+          RANGE: [955, 972]
+        - NAME: IND_FORM_CODE
+          RANGE: [1022, 1023]
+        - NAME: IND_REF_NUMBER
+          RANGE: [1024, 1053]
+        - NAME: LOC_REF_NUMBER
+          RANGE: [1057, 1071]
+        - NAME: TRIUMPH_SEQUENCE_NUMBER
+          RANGE: [1074, 1075]
+        - NAME: INQUIRY_MARK
+          RANGE: [1076, 1076]
+    CARRD:
+      RECURRING: true
+      FIELDS:
+        - NAME: CHARGE_AMOUNT
+          RANGE: [855, 863]
+          TYPE: float
+        - NAME: DISPUTED_AMOUNT
+          RANGE: [864, 872]
+          TYPE: float
+        - NAME: REFERENCE_NUMBER
+          RANGE: [873, 884]
+        - NAME: SOC_INVOICE_NUMBER
+          RANGE: [885, 890]
+        - NAME: RENTAL_AGREEMENT_NEEDED
+          RANGE: [891, 891]
+        - NAME: RENTAL_AGREEMENT_NUMBER
+          RANGE: [892, 909]
+        - NAME: TRIUMPH_SEQUENCE_NUMBER
+          RANGE: [1074, 1075]
+        - NAME: INQUIRY_MARK
+          RANGE: [1076, 1076]
+    SDIS:
+      RECURRING: true
+      FIELDS:
+        - NAME: CHARGE_AMOUNT
+          RANGE: [855, 863]
+          TYPE: float
+        - NAME: DISPUTED_AMOUNT
+          RANGE: [864, 872]
+          TYPE: float
+        - NAME: REFERENCE_NUMBER
+          RANGE: [873, 884]
+        - NAME: IND_FORM_CODE_1
+          RANGE: [903, 904]
+        - NAME: IND_REF_NUMBER_1
+          RANGE: [905, 934]
+        - NAME: LOC_REF_NUMBER_1
+          RANGE: [938, 952]
+        - NAME: IND_FORM_CODE_2
+          RANGE: [1022, 1023]
+        - NAME: IND_REF_NUMBER_2
+          RANGE: [1024, 1053]
+        - NAME: LOC_REF_NUMBER_2
+          RANGE: [1057, 1071]
+        - NAME: TRIUMPH_SEQUENCE_NUMBER
+          RANGE: [1074, 1075]
+        - NAME: INQUIRY_MARK
+          RANGE: [1076, 1076]
+    NAXMG:
+      RECURRING: true
+      FIELDS:
+        - NAME: CHARGE_AMOUNT
+          RANGE: [855, 863]
+          TYPE: float
+        - NAME: DISPUTED_AMOUNT
+          RANGE: [864, 872]
+          TYPE: float
+        - NAME: REFERENCE_NUMBER
+          RANGE: [873, 884]
+        - NAME: MERCHANDISE_TYPE
+          RANGE: [885, 904]
+        - NAME: ORDER_NUMBER
+          RANGE: [905, 914]
+        - NAME: ORDER_NUMBER
+          RANGE: [905, 914]
+        - NAME: IND_FORM_CODE
+          RANGE: [1022, 1023]
+        - NAME: IND_REF_NUMBER
+          RANGE: [1024, 1053]
+        - NAME: LOC_REF_NUMBER
+          RANGE: [1057, 1071]
+        - NAME: TRIUMPH_SEQUENCE_NUMBER
+          RANGE: [1074, 1075]
+        - NAME: INQUIRY_MARK
+          RANGE: [1076, 1076]
+    NAXMR:
+      RECURRING: true
+      FIELDS:
+        - NAME: CHARGE_AMOUNT
+          RANGE: [855, 863]
+          TYPE: float
+        - NAME: DISPUTED_AMOUNT
+          RANGE: [864, 872]
+          TYPE: float
+        - NAME: REFERENCE_NUMBER
+          RANGE: [873, 884]
+        - NAME: MERCHANDISE_TYPE
+          RANGE: [885, 904]
+        - NAME: MERCHANDISE_RETURNED
+          RANGE: [905, 905]
+        - NAME: CREDIT_REQUESTED
+          RANGE: [906, 906]
+        - NAME: REPLACEMENT_REQUESTED
+          RANGE: [907, 907]
+        - NAME: RETURNED_NAME
+          RANGE: [908, 931]
+        - NAME: RETURNED_DATE
+          RANGE: [932, 937]
+        - NAME: RETURNED_HOW
+          RANGE: [938, 945]
+        - NAME: RETURNED_REASON
+          RANGE: [946, 995]
+        - NAME: STORE_CREDIT_RECEIVED
+          RANGE: [996, 996]
+        - NAME: CREDIT_RECEIPT_NUMBER
+          RANGE: [997, 1011]
+        - NAME: ORDER_NUMBER
+          RANGE: [1012, 1021]
+        - NAME: IND_FORM_CODE_1
+          RANGE: [1022, 1023]
+        - NAME: IND_REF_NUMBER_1
+          RANGE: [1024, 1053]
+        - NAME: LOC_REF_NUMBER_1
+          RANGE: [1057, 1071]
+        - NAME: TRIUMPH_SEQUENCE_NUMBER
+          RANGE: [1074, 1075]
+        - NAME: INQUIRY_MARK
+          RANGE: [1076, 1076]
+    SEDIS:
+      RECURRING: true
+      FIELDS:
+        - NAME: CHARGE_AMOUNT
+          RANGE: [855, 863]
+          TYPE: float
+        - NAME: DISPUTED_AMOUNT
+          RANGE: [864, 872]
+          TYPE: float
+        - NAME: REFERENCE_NUMBER
+          RANGE: [873, 884]
+        - NAME: FOLIO_REF_NUMBER
+          RANGE: [885, 902]
+        - NAME: IND_FORM_CODE_1
+          RANGE: [903, 904]
+        - NAME: IND_REF_NUMBER_1
+          RANGE: [905, 934]
+        - NAME: LOC_REF_NUMBER_1
+          RANGE: [938, 952]
+        - NAME: IND_FORM_CODE_2
+          RANGE: [1022, 1023]
+        - NAME: IND_REF_NUMBER_2
+          RANGE: [1024, 1053]
+        - NAME: LOC_REF_NUMBER_2
+          RANGE: [1057, 1071]
+        - NAME: TRIUMPH_SEQUENCE_NUMBER
+          RANGE: [1074, 1075]
+        - NAME: INQUIRY_MARK
+          RANGE: [1076, 1076]
+    SEDIS:
+      RECURRING: true
+      FIELDS:
+        - NAME: CHARGE_AMOUNT
+          RANGE: [855, 863]
+          TYPE: float
+        - NAME: DISPUTED_AMOUNT
+          RANGE: [864, 872]
+          TYPE: float
+        - NAME: REFERENCE_NUMBER
+          RANGE: [873, 884]
+        - NAME: FOLIO_REF_NUMBER
+          RANGE: [885, 902]
+        - NAME: IND_FORM_CODE_1
+          RANGE: [903, 904]
+        - NAME: IND_REF_NUMBER_1
+          RANGE: [905, 934]
+        - NAME: LOC_REF_NUMBER_1
+          RANGE: [938, 952]
+        - NAME: IND_FORM_CODE_2
+          RANGE: [1022, 1023]
+        - NAME: IND_REF_NUMBER_2
+          RANGE: [1024, 1053]
+        - NAME: LOC_REF_NUMBER_2
+          RANGE: [1057, 1071]
+        - NAME: TRIUMPH_SEQUENCE_NUMBER
+          RANGE: [1074, 1075]
+        - NAME: INQUIRY_MARK
+          RANGE: [1076, 1076]
+    FRAUD:
+      RECURRING: true
+      FIELDS:
+        - NAME: CHARGE_AMOUNT
+          RANGE: [855, 863]
+          TYPE: float
+        - NAME: DISPUTED_AMOUNT
+          RANGE: [864, 872]
+          TYPE: float
+        - NAME: REFERENCE_NUMBER
+          RANGE: [873, 884]
+        - NAME: FOLIO_REF_NUMBER
+          RANGE: [885, 902]
+        - NAME: IND_FORM_CODE_1
+          RANGE: [903, 904]
+        - NAME: IND_REF_NUMBER_1
+          RANGE: [905, 934]
+        - NAME: LOC_REF_NUMBER_1
+          RANGE: [938, 952]
+        - NAME: IND_FORM_CODE_2
+          RANGE: [1022, 1023]
+        - NAME: IND_REF_NUMBER_2
+          RANGE: [1024, 1053]
+        - NAME: LOC_REF_NUMBER_2
+          RANGE: [1057, 1071]
+        - NAME: TRIUMPH_SEQUENCE_NUMBER
+          RANGE: [1074, 1075]
+        - NAME: INQUIRY_MARK
+          RANGE: [1076, 1076]
+    CRCDW:
+      RECURRING: true
+      FIELDS:
+        - NAME: CHARGE_AMOUNT
+          RANGE: [855, 863]
+          TYPE: float
+        - NAME: DISPUTED_AMOUNT
+          RANGE: [864, 872]
+          TYPE: float
+        - NAME: REFERENCE_NUMBER
+          RANGE: [873, 884]
+        - NAME: FOLIO_REF_NUMBER
+          RANGE: [885, 902]
+        - NAME: IND_FORM_CODE_1
+          RANGE: [903, 904]
+        - NAME: IND_REF_NUMBER_1
+          RANGE: [905, 934]
+        - NAME: LOC_REF_NUMBER_1
+          RANGE: [938, 952]
+        - NAME: IND_FORM_CODE_2
+          RANGE: [1022, 1023]
+        - NAME: IND_REF_NUMBER_2
+          RANGE: [1024, 1053]
+        - NAME: LOC_REF_NUMBER_2
+          RANGE: [1057, 1071]
+        - NAME: TRIUMPH_SEQUENCE_NUMBER
+          RANGE: [1074, 1075]
+        - NAME: INQUIRY_MARK
+          RANGE: [1076, 1076]
+DATA_FILE_TRAILER_RECORD:
+  TRAILER: true
+  FIELDS:
+    - NAME: RECORD_TYPE
+      RANGE: [0, 0]
+    - NAME: AMEX_APPL_AREA
+      RANGE: [1, 100]
+    - NAME: SAID
+      RANGE: [101, 106]
+    - NAME: DATATYPE
+      RANGE: [107, 111]
+    - NAME: STARS_CREATION_DATE
+      RANGE: [112, 118]
+    - NAME: FILE_CREATION_TIME
+      RANGE: [119, 125]
+    - NAME: STARS_FILE_SEQUENCE_NUMBER
+      RANGE: [126, 128]

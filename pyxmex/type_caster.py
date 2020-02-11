@@ -43,19 +43,25 @@ class TypeCaster():
         }
 
     @classmethod
-    def parse(self, type_name, raw_value):
-        if raw_value == '':
-            return None
+    def parse(self, type_name, raw_value, field_name=None):
+        try:
+            if raw_value == '':
+                return None
 
-        handler_function = self.type_handling().get(type_name)
+            handler_function = self.type_handling().get(type_name)
 
-        if handler_function:
-            return handler_function(raw_value)
+            if handler_function:
+                return handler_function(raw_value)
 
-        datetime_match = re.search(self.DATE_PATTERN, type_name) or re.search(self.TIME_PATTERN, type_name)
+            datetime_match = re.search(self.DATE_PATTERN, type_name) or re.search(self.TIME_PATTERN, type_name)
 
-        if datetime_match:
-            return datetime.datetime.strptime(raw_value, datetime_match.group(1))
+            if datetime_match:
+                return datetime.datetime.strptime(raw_value, datetime_match.group(1))
+        except:
+            if field_name:
+                raise ValueError("Could not parse {0} value {1} with type {2}".format(field_name, raw_value, type_name))
+            else:
+                raise ValueError("Could not parse {0} with type {1}".format(raw_value, type_name))
 
         raise ValueError("Could not parse {0} with type {1}".format(raw_value, type_name))
 
