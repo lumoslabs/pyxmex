@@ -61,7 +61,7 @@ INQUIRY_DETAIL_RECORD_GENERIC:
       RANGE: [255, 256]
     - NAME: FOREIGN_AMOUNT
       RANGE: [257, 271]
-      TYPE: float
+      TYPE: numeric
     - NAME: SUPPORT_TO_FOLLOW
       RANGE: [275, 275]
     - NAME: INQUIRY_ACTION_NUMBER
@@ -106,10 +106,10 @@ INQUIRY_DETAIL_RECORD_CASE_TYPE_SPECIFIC:
       FIELDS:
         - NAME: CHARGE_AMOUNT
           RANGE: [855, 863]
-          TYPE: float
+          TYPE: numeric
         - NAME: DISPUTED_AMOUNT
           RANGE: [864, 872]
-          TYPE: float
+          TYPE: numeric
         - NAME: REFERENCE_NUMBER
           RANGE: [873, 884]
         - NAME: SOC_INVOICE_NUMBER
@@ -142,10 +142,10 @@ INQUIRY_DETAIL_RECORD_CASE_TYPE_SPECIFIC:
       FIELDS:
         - NAME: CHARGE_AMOUNT
           RANGE: [855, 863]
-          TYPE: float
+          TYPE: numeric
         - NAME: DISPUTED_AMOUNT
           RANGE: [864, 872]
-          TYPE: float
+          TYPE: numeric
         - NAME: REFERENCE_NUMBER
           RANGE: [873, 884]
         - NAME: SOC_INVOICE_NUMBER
@@ -181,10 +181,10 @@ INQUIRY_DETAIL_RECORD_CASE_TYPE_SPECIFIC:
       FIELDS:
         - NAME: CHARGE_AMOUNT
           RANGE: [855, 863]
-          TYPE: float
+          TYPE: numeric
         - NAME: DISPUTED_AMOUNT
           RANGE: [864, 872]
-          TYPE: float
+          TYPE: numeric
         - NAME: REFERENCE_NUMBER
           RANGE: [873, 884]
         - NAME: SOC_INVOICE_NUMBER
@@ -226,10 +226,10 @@ INQUIRY_DETAIL_RECORD_CASE_TYPE_SPECIFIC:
       FIELDS:
         - NAME: CHARGE_AMOUNT
           RANGE: [855, 863]
-          TYPE: float
+          TYPE: numeric
         - NAME: DISPUTED_AMOUNT
           RANGE: [864, 872]
-          TYPE: float
+          TYPE: numeric
         - NAME: REFERENCE_NUMBER
           RANGE: [873, 884]
         - NAME: SOC_INVOICE_NUMBER
@@ -259,10 +259,10 @@ INQUIRY_DETAIL_RECORD_CASE_TYPE_SPECIFIC:
       FIELDS:
         - NAME: CHARGE_AMOUNT
           RANGE: [855, 863]
-          TYPE: float
+          TYPE: numeric
         - NAME: DISPUTED_AMOUNT
           RANGE: [864, 872]
-          TYPE: float
+          TYPE: numeric
         - NAME: REFERENCE_NUMBER
           RANGE: [873, 884]
         - NAME: CARD_DEPOSIT
@@ -305,10 +305,10 @@ INQUIRY_DETAIL_RECORD_CASE_TYPE_SPECIFIC:
       FIELDS:
         - NAME: CHARGE_AMOUNT
           RANGE: [855, 863]
-          TYPE: float
+          TYPE: numeric
         - NAME: DISPUTED_AMOUNT
           RANGE: [864, 872]
-          TYPE: float
+          TYPE: numeric
         - NAME: REFERENCE_NUMBER
           RANGE: [873, 884]
         - NAME: SOC_INVOICE_NUMBER
@@ -326,10 +326,10 @@ INQUIRY_DETAIL_RECORD_CASE_TYPE_SPECIFIC:
       FIELDS:
         - NAME: CHARGE_AMOUNT
           RANGE: [855, 863]
-          TYPE: float
+          TYPE: numeric
         - NAME: DISPUTED_AMOUNT
           RANGE: [864, 872]
-          TYPE: float
+          TYPE: numeric
         - NAME: REFERENCE_NUMBER
           RANGE: [873, 884]
         - NAME: IND_FORM_CODE_1
@@ -353,10 +353,10 @@ INQUIRY_DETAIL_RECORD_CASE_TYPE_SPECIFIC:
       FIELDS:
         - NAME: CHARGE_AMOUNT
           RANGE: [855, 863]
-          TYPE: float
+          TYPE: numeric
         - NAME: DISPUTED_AMOUNT
           RANGE: [864, 872]
-          TYPE: float
+          TYPE: numeric
         - NAME: REFERENCE_NUMBER
           RANGE: [873, 884]
         - NAME: MERCHANDISE_TYPE
@@ -380,10 +380,10 @@ INQUIRY_DETAIL_RECORD_CASE_TYPE_SPECIFIC:
       FIELDS:
         - NAME: CHARGE_AMOUNT
           RANGE: [855, 863]
-          TYPE: float
+          TYPE: numeric
         - NAME: DISPUTED_AMOUNT
           RANGE: [864, 872]
-          TYPE: float
+          TYPE: numeric
         - NAME: REFERENCE_NUMBER
           RANGE: [873, 884]
         - NAME: MERCHANDISE_TYPE
@@ -424,10 +424,10 @@ INQUIRY_DETAIL_RECORD_CASE_TYPE_SPECIFIC:
       FIELDS:
         - NAME: CHARGE_AMOUNT
           RANGE: [855, 863]
-          TYPE: float
+          TYPE: numeric
         - NAME: DISPUTED_AMOUNT
           RANGE: [864, 872]
-          TYPE: float
+          TYPE: numeric
         - NAME: REFERENCE_NUMBER
           RANGE: [873, 884]
         - NAME: FOLIO_REF_NUMBER
@@ -453,10 +453,10 @@ INQUIRY_DETAIL_RECORD_CASE_TYPE_SPECIFIC:
       FIELDS:
         - NAME: CHARGE_AMOUNT
           RANGE: [855, 863]
-          TYPE: float
+          TYPE: numeric
         - NAME: DISPUTED_AMOUNT
           RANGE: [864, 872]
-          TYPE: float
+          TYPE: numeric
         - NAME: REFERENCE_NUMBER
           RANGE: [873, 884]
         - NAME: FOLIO_REF_NUMBER
@@ -482,10 +482,10 @@ INQUIRY_DETAIL_RECORD_CASE_TYPE_SPECIFIC:
       FIELDS:
         - NAME: CHARGE_AMOUNT
           RANGE: [855, 863]
-          TYPE: float
+          TYPE: numeric
         - NAME: DISPUTED_AMOUNT
           RANGE: [864, 872]
-          TYPE: float
+          TYPE: numeric
         - NAME: REFERENCE_NUMBER
           RANGE: [873, 884]
         - NAME: FOLIO_REF_NUMBER
@@ -511,10 +511,10 @@ INQUIRY_DETAIL_RECORD_CASE_TYPE_SPECIFIC:
       FIELDS:
         - NAME: CHARGE_AMOUNT
           RANGE: [855, 863]
-          TYPE: float
+          TYPE: numeric
         - NAME: DISPUTED_AMOUNT
           RANGE: [864, 872]
-          TYPE: float
+          TYPE: numeric
         - NAME: REFERENCE_NUMBER
           RANGE: [873, 884]
         - NAME: FOLIO_REF_NUMBER
