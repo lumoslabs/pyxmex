@@ -11,14 +11,12 @@ class TestINQ02Parser(unittest.TestCase):
     def test_process_parses_a_sample_file(self):
         parsed = self.parser.process(self.dummy_file_path)
 
-        print(parsed)
-
         self.assertEqual(parsed[0]['INQUIRY_CASE_NUMBER'], 'OKE2508')
         self.assertEqual(parsed[0]['SE_REPLY_BY_DATE'], datetime.datetime(2020, 1, 28, 0, 0))
         self.assertEqual(parsed[0]['INQUIRY_REASON_CODE'], '155')
         self.assertEqual(parsed[0]['CASE_TYPE'], 'SEDIS')
-        self.assertEqual(parsed[0]['CHARGE_AMOUNT'], 9195.0)
-        self.assertEqual(parsed[0]['DISPUTED_AMOUNT'], 9195.0)
+        self.assertEqual(parsed[0]['CHARGE_AMOUNT'], 9195)
+        self.assertEqual(parsed[0]['DISPUTED_AMOUNT'], 9195)
 
 if __name__ == '__main__':
     unittest.main()
