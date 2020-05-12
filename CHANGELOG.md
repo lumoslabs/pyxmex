@@ -1,3 +1,6 @@
+# 0.3.0
+* Add inquiry parse, INQ02Parser
+
 # 0.2.1
 * Add Python 3 support
 
