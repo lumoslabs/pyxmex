@@ -1,0 +1,135 @@
+RANGE_OFFSET: -1
+DATA_FILE_HEADER_RECORD:
+  FIELDS:
+    - NAME: HDR_IND
+      RANGE: [1, 1]
+    - NAME: APPSYS_CD
+      RANGE: [2, 3]
+    - NAME: FILE_TYPE_CD
+      RANGE: [4, 5]
+    - NAME: FILE_CREATION_DATE
+      RANGE: [6, 13]
+    - NAME: FILE_SEQUENCE_NUMBER
+      RANGE: [20, 21]
+    - NAME: SAID
+      RANGE: [102, 107]
+    - NAME: DATATYPE
+      RANGE: [108, 112]
+    - NAME: STARS_CREATION_TIME
+      RANGE: [113, 119]
+      TYPE: julian
+    - NAME: FILE_CREATION_TIME
+      RANGE: [120, 126]
+      TYPE: numeric
+    - NAME: STARS_FILESEQ_NB
+      RANGE: [127, 129]
+CHARGEBACK_DETAIL_RECORD:
+  RECURRING: true
+  FIELDS:
+    - NAME: DTL_IND
+      RANGE: [1, 1]
+    - NAME: REC_TYPE
+      RANGE: [2, 6]
+    - NAME: SE_NO
+      RANGE: [7, 16]
+    - NAME: CARD_NO
+      RANGE: [17, 35]
+    - NAME: CASE_NO
+      RANGE: [36, 51]
+    - NAME: CHRGBK_DT
+      RANGE: [52, 61]
+    - NAME: CHRGBK_AMT
+      RANGE: [62, 81]
+    - NAME: CHRGBK_CURR_CD
+      RANGE: [82, 84]
+    - NAME: CHRGBK_RSN_CD
+      RANGE: [85, 88]
+    - NAME: ADJ_REF_NO
+      RANGE: [89, 103]
+    - NAME: SOC_REF_NO
+      RANGE: [104, 118]
+    - NAME: ROC_REF_NO
+      RANGE: [119, 133]
+    - NAME: TRANS_DT
+      RANGE: [134, 143]
+    - NAME: TRANS_AMT
+      RANGE: [144, 163]
+    - NAME: TRANS_CURR_CD
+      RANGE: [164, 166]
+    - NAME: SOC_DT
+      RANGE: [167, 176]
+    - NAME: SOC_AMT
+      RANGE: [177, 196]
+    - NAME: AIR_TKT_NO
+      RANGE: [197, 220]
+    - NAME: MICRO_SEQ_NO
+      RANGE: [221, 230]
+    - NAME: SETTLE_SE_NO
+      RANGE: [231, 240]
+    - NAME: SETTLE_SE_AMT
+      RANGE: [241, 260]
+    - NAME: SETTLE_CURR_CD
+      RANGE: [261, 263]
+    - NAME: SETTLE_DT
+      RANGE: [264, 273]
+    - NAME: CASE_UPD_FLAG
+      RANGE: [274, 274]
+    - NAME: CAS_UPD_TYPE
+      RANGE: [275, 276]
+    - NAME: CASE_UPD_DT
+      RANGE: [277, 286]
+    - NAME: SE_REPLY_BY_DT
+      RANGE: [287, 296]
+    - NAME: IND_TYP_CD
+      RANGE: [297, 306]
+    - NAME: TERMINAL_ID
+      RANGE: [307, 316]
+    - NAME: SUBMM_CURR_CD
+      RANGE: [317, 319]
+    - NAME: FIRST_PRSNT_AMT
+      RANGE: [320, 339]
+    - NAME: FIRST_PRSNT_CURR_CD
+      RANGE: [340, 342]
+    - NAME: TRANS_ID
+      RANGE: [343, 392]
+    - NAME: ACQ_REF_NO
+      RANGE: [393, 415]
+    - NAME: ADD_INFO_TXT1
+      RANGE: [416, 1545]
+    - NAME: ROC_REF_NO_EXTENDED
+      RANGE: [1546, 1575]
+    - NAME: CARD_MEMBER_NAME
+      RANGE: [1576, 1606]
+    - NAME: ADD_INFO_TXT2
+      RANGE: [1607, 2045]
+    - NAME: SELLER_ID
+      RANGE: [2046, 2065]
+DATA_FILE_TRAILER_RECORD:
+  TRAILER: true
+  FIELDS:
+    - NAME: TRL_IND
+      RANGE: [1, 1]
+    - NAME: APPSYS_CD
+      RANGE: [2, 3]
+    - NAME: FILE_TYPE_CD
+      RANGE: [4, 5]
+    - NAME: FILE_CREATION_DATE
+      RANGE: [6, 13]
+    - NAME: FILE_SEQUENCE_NUMBER
+      RANGE: [20, 21]
+    - NAME: AMEX_TOT_RECS
+      RANGE: [27, 35]
+    - NAME: SE_TOT_RECS
+      RANGE: [36, 44]
+    - NAME: SAID
+      RANGE: [102, 107]
+    - NAME: DATATYPE
+      RANGE: [108, 112]
+    - NAME: CCYYDDD
+      RANGE: [113, 119]
+      TYPE: julian
+    - NAME: OHHMMSS
+      RANGE: [120, 126]
+      TYPE: number
+    - NAME: STARS_FILESEQ_NB
+      RANGE: [127, 129]
