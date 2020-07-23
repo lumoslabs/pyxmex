@@ -60,8 +60,8 @@ INQUIRY_DETAIL_RECORD:
       RANGE: [141, 143]
     - NAME: FIRST_PRSNT_AMT
       RANGE: [144, 163]
-    - NAME: SOC_REF_NO
       TYPE: float
+    - NAME: SOC_REF_NO
       RANGE: [164, 178]
     - NAME: SOC_DT
       RANGE: [179, 188]
