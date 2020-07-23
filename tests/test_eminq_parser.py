@@ -17,6 +17,7 @@ class TestEMINQParser(unittest.TestCase):
         self.assertEqual(parsed[0]['TRANS_DATE'], datetime.datetime(2013, 1, 31))
         self.assertEqual(parsed[0]['TRANS_AMT'], 58.25)
         self.assertEqual(parsed[0]['TRANS_CURR_CD'], 'EUR')
+        self.assertEqual(parsed[0]['FIRST_PRSNT_AMT'], 58.25)
 
         self.assertEqual(parsed[1]['TRANS_AMT'], 69.99)
 
