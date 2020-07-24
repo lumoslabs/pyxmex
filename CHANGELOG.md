@@ -1,3 +1,6 @@
+# 0.4.0
+* Add EMCBKParser and EMINQParser
+
 # 0.3.0
 * Add inquiry parser, INQ02Parser
 
