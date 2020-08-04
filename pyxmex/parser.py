@@ -3,6 +3,16 @@ from pyxmex.type_caster import TypeCaster
 
 
 class Parser(object):
+    def process(self, file_name):
+        try:
+            with open(file_name) as f:
+                content = f.readlines()
+                return self.process_lines(content)
+        except UnicodeDecodeError:
+            with open(file_name, 'rb') as f:
+                content = f.readlines()
+                return self.process_lines(content)
+
     def _parse_line(self, field_formats, line, range_offset=0):
         fields = {}
 

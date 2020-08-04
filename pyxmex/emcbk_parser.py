@@ -22,7 +22,7 @@ class EMCBKParser(Parser):
                 content = f.readlines()
                 return self.process_lines(content)
         except UnicodeDecodeError:
-            with open(file_name, encoding='latin-1') as f:
+            with open(file_name, 'rb') as f:
                 content = f.readlines()
                 return self.process_lines(content)
 

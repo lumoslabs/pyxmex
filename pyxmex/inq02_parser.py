@@ -14,11 +14,6 @@ class INQ02Parser(Parser):
         self.inq02_generic_config = config['INQUIRY_DETAIL_RECORD_GENERIC']
         self.inq02_case_config = config['INQUIRY_DETAIL_RECORD_CASE_TYPE_SPECIFIC']
 
-    def process(self, file_name):
-        with open(file_name) as f:
-            content = f.readlines()
-            return self.process_lines(content)
-
     def process_lines(self, content):
         result = []
 

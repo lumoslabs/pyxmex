@@ -12,11 +12,6 @@ class CBNOTParser(Parser):
 
         self.field_formats = config['CHARGEBACK_DETAIL_RECORD']['FIELDS']
 
-    def process(self, file_name):
-        with open(file_name) as f:
-            content = f.readlines()
-            return self.process_lines(content)
-
     def process_lines(self, content):
         result = []
 
