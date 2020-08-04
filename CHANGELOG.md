@@ -1,3 +1,6 @@
+# 0.4.1
+* Fall back to latin-1 encoding for EMCBKParser
+
 # 0.4.0
 * Add EMCBKParser and EMINQParser
 
