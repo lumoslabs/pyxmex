@@ -16,16 +16,6 @@ class EMCBKParser(Parser):
         # documented indexes to their zero based equivalents.
         self.range_offset = config.get('RANGE_OFFSET', 0)
 
-    def process(self, file_name):
-        try:
-            with open(file_name) as f:
-                content = f.readlines()
-                return self.process_lines(content)
-        except UnicodeDecodeError:
-            with open(file_name, 'rb') as f:
-                content = f.readlines()
-                return self.process_lines(content)
-
     def process_lines(self, content):
         result = []
 

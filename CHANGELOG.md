@@ -1,5 +1,5 @@
 # 0.4.2
-* Fall back to reading as binary for all parsers
+* Fall back to latin-1 encoding for all parsers
 
 # 0.4.1
 * Fall back to latin-1 encoding for EMCBKParser
