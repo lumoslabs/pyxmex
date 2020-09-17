@@ -18,5 +18,11 @@ class TestCBNOTParser(unittest.TestCase):
 
         self.assertEqual(parsed[1]['CB_AMOUNT'], -33.10)
 
+        self.assertEqual(parsed[2]['SE_NUMB'], '1554988333')
+        self.assertEqual(parsed[2]['CB_REFERENCE_CODE'], '12217749')
+        self.assertEqual(parsed[2]['DATE_OF_CHARGE'], datetime.datetime(2017, 1, 15))
+        self.assertEqual(parsed[2]['CB_AMOUNT'], -40.07)
+
+
 if __name__ == '__main__':
     unittest.main()
