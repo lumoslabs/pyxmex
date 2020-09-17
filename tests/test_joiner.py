@@ -20,9 +20,15 @@ class TestJoiner(unittest.TestCase):
             join_condition=join_condition
         )
 
-        self.assertEqual(joined[0]['PAYMENT_DATE'], datetime.datetime(2013, 3, 9))
-        self.assertEqual(joined[0]['AMEX_PAYEE_NUMBER'], 3491124567)
+        self.assertEqual(2, len(joined))
+
+        self.assertEqual(datetime.datetime(2013, 3, 9), joined[0]['PAYMENT_DATE'])
+        self.assertEqual(3491124567, joined[0]['AMEX_PAYEE_NUMBER'])
         self.assertEqual(joined[0]['PAYMENT_NUMBER'], joined[0]['TLRR_PAYMENT_NUMBER'])
+
+        self.assertEqual(datetime.datetime(2013, 3, 11), joined[1]['PAYMENT_DATE'])
+        self.assertEqual(2223334445, joined[1]['AMEX_PAYEE_NUMBER'])
+        self.assertEqual(joined[1]['PAYMENT_NUMBER'], joined[1]['TLRR_PAYMENT_NUMBER'])
 
 if __name__ == '__main__':
     unittest.main()
