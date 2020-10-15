@@ -1,3 +1,6 @@
+# 0.3.2
+* Bump six version to latest
+
 # 0.3.1
 * Support multiple service establishment accounts in a single EPTRN or CBNOT file
 

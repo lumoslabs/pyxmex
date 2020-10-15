@@ -1,6 +1,6 @@
 from setuptools import setup, find_packages
 
-version = '0.3.1'
+version = '0.3.2'
 
 def do_setup():
     setup(
@@ -10,7 +10,7 @@ def do_setup():
         version=version,
         packages=find_packages(),
         zip_safe=False,
-        install_requires=['pyyaml', 'six==1.12.0'],
+        install_requires=['pyyaml', 'six==1.15.0'],
         package_data={'': ['pyxmex/config/*.yml']},
         include_package_data=True,
         author='Rob Froetscher, Joyce Lau',
