@@ -1,3 +1,6 @@
+# 0.3.3
+* Drop Python2 support
+
 # 0.3.2
 * Bump six version to latest
 
