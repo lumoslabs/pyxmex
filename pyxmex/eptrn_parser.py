@@ -1,5 +1,4 @@
 from yaml import safe_load
-from six import iteritems
 import os
 from . import utils
 from .parser import Parser
@@ -12,7 +11,7 @@ class EPTRNParser(Parser):
             config = safe_load(f)
 
         self.eptrn_config = config['DETAIL_RECORD']
-        self.section_types = [v for k, v in iteritems(self.eptrn_config['TYPE_MAPPING'])]
+        self.section_types = list(self.eptrn_config['TYPE_MAPPING'].values())
 
         self.record_type_field = config['GENERAL']['RECORD_TYPE_FIELD']
         self.record_types_to_skip = [config['DATA_FILE_HEADER_RECORD']['RECORD_TYPE'],
