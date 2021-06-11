@@ -1,4 +1,4 @@
-# 0.3.3
+# 0.4.0
 * Drop Python2 support
 
 # 0.3.2
